@@ -11,3 +11,7 @@ func GetNodesBySelector(selector string, root *html.Node) []*html.Node {
 	doc := goquery.NewDocumentFromNode(root)
 	return doc.Find(selector).Nodes
 }
+
+func GetAllChildes(root *html.Node) []*html.Node {
+	return GetNodesBySelector("*", root)
+}

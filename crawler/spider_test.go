@@ -47,3 +47,18 @@ func TestGetNodesBySelector(t *testing.T) {
 	}
 
 }
+
+func TestGetAllChildes(t *testing.T) {
+
+	// ARRANGE
+	root, _ := html.Parse(getMockWebsite())
+
+	// ACT
+	result := GetAllChildes(root)
+
+	// ASSERT
+	if len(result) < 8 {
+		t.Errorf("The wrong number of elements was found: %d!", len(result))
+	}
+
+}
