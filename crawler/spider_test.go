@@ -62,3 +62,21 @@ func TestGetAllChildes(t *testing.T) {
 	}
 
 }
+
+func TestGetNodesWithClasses(t *testing.T) {
+
+	// ARRANGE
+	root, _ := html.Parse(getMockWebsite())
+	classes := []string{"a-class","b-class"}
+
+	// ACT
+	result :=GetNodesWithClasses(classes,root)
+
+	// ASSERT
+	if len(result) != 1 {
+		t.Errorf("The wrong number of elements was found: %d!", len(result))
+	}
+
+}
+
+
